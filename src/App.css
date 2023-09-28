@@ -1,38 +1,96 @@
-.App {
-  text-align: center;
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+header{
+  background-color: #B6B4B4;
+  padding: 16px 0;
+}
+.nav-center{
+  width:96%;
+  max-width: 1400px;
+  margin:0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;   
+}
+.container{
+  width:96%;
+  max-width: 1400px;
+  margin:0 auto;
+}
+h1,h2{
+  margin-bottom: 1.5rem;;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav{
+  list-style: none;
+  display:flex;
+  justify-content: center;
+  gap:15px
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a{
+  text-decoration: none;
+  color:#333;
+  font-weight:500;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.hero{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  min-height: 90vh;
+  background-color: #EFF7FF;
+}
+.btn{
+  background-color: #645CFF;
+  color:#fff;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  padding: 10px 25px;
+  font-size: 1.2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.add-task{
+  min-height: 90vh;
+  background-color: #EFF7FF;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form{
+  padding-top:5rem;
+  padding-bottom:2.5rem;
+  width:100%;
+}
+input{
+  width:30%;
+  padding: 10px 15px;
+  margin-right: 25px;
+  font-size: 1.1rem;
+  background-color: #E7E7E8;
+}
+.todo-list{
+  background-color: #fff;
+  width:30%;
+  padding:15px 20px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.todo-item{
+  /* width:30%; */
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;;
+}
+.icon-check{
+  margin-right: 10px;
+  color:blue
+}
+.icon-remove{
+  color:red;
 }
