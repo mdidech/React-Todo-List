@@ -8,12 +8,16 @@ import { FaCheck } from 'react-icons/fa';
 import { RiDeleteBin5Fill } from 'react-icons/ri';
 const TodoCrud = () => {
   const [todoItems,setTodoItems]=useState(todos);
+
+  const addNewTask=(newTask)=>{
+    setTodoItems([...todoItems,newTask]);
+  }
   return (
     <>
     <Navbar />
     <main className='add-task'>
      <div className="container">
-     <AddTask />
+     <AddTask addnewTask={addNewTask} />
      <TodoList>
 
     {todoItems.map((item)=>{
@@ -21,11 +25,11 @@ const TodoCrud = () => {
           <div className="todo-item" key={item.id}>
             {item.completed ? (<s>{item.title}</s>):(<p>{item.title}</p>) }
             
-            <div className="actions">
-              <FaCheck className='icon-check' />
-              <RiDeleteBin5Fill className='icon-remove' />
-          </div>  
-    </div>
+              <div className="actions">
+                <FaCheck className='icon-check' />
+                <RiDeleteBin5Fill className='icon-remove' />
+              </div>  
+          </div>
 
         )
       })}
