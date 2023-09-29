@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from '../components/Navbar'
 import AddTask from '../components/AddTask'
 import TodoList from '../components/TodoList'
+import {todos} from "../assets/data";
 
 import { FaCheck } from 'react-icons/fa';
 import { RiDeleteBin5Fill } from 'react-icons/ri';
 const TodoCrud = () => {
+  const [todoItems,setTodoItems]=useState(todos);
   return (
     <>
     <Navbar />
@@ -13,27 +15,20 @@ const TodoCrud = () => {
      <div className="container">
      <AddTask />
      <TodoList>
-    <div className="todo-item">
-      <p>Task 1</p>
-      <div className="actions">
-        <FaCheck className='icon-check' />
-        <RiDeleteBin5Fill className='icon-remove' />
-      </div>
+
+    {todoItems.map((item)=>{
+      return (
+          <div className="todo-item" key={item.id}>
+            {item.completed ? (<s>{item.title}</s>):(<p>{item.title}</p>) }
+            
+            <div className="actions">
+              <FaCheck className='icon-check' />
+              <RiDeleteBin5Fill className='icon-remove' />
+          </div>  
     </div>
-    <div className="todo-item">
-      <p>Task 2</p>
-      <div className="actions">
-        <FaCheck className='icon-check' />
-        <RiDeleteBin5Fill className='icon-remove' />
-      </div>
-    </div>
-    <div className="todo-item">
-      <p>Task 3</p>
-      <div className="actions">
-        <FaCheck className='icon-check' />
-        <RiDeleteBin5Fill className='icon-remove' />
-      </div>
-    </div>
+
+        )
+      })}
      </TodoList>
      </div>
     </main>

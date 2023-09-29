@@ -1,9 +1,10 @@
 import React from 'react'
+// {children}=props
+const TodoList = (props) => {
 
-const TodoList = ({children}) => {
   return (
     <div className='todo-list'>
-     {children}
+     {props.children}
     </div>
   )
 }
